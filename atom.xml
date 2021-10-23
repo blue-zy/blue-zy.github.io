@@ -6,7 +6,7 @@
   <link href="https://blue-zy.github.io/atom.xml" rel="self"/>
   
   <link href="https://blue-zy.github.io/"/>
-  <updated>2021-10-23T21:18:26.763Z</updated>
+  <updated>2021-10-23T18:44:24.096Z</updated>
   <id>https://blue-zy.github.io/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>post</title>
-    <link href="https://blue-zy.github.io/2021/10/24/auto%20comment%20init%20test/"/>
-    <id>https://blue-zy.github.io/2021/10/24/auto%20comment%20init%20test/</id>
-    <published>2021-10-23T21:18:03.000Z</published>
-    <updated>2021-10-23T21:18:26.763Z</updated>
-    
-    <content type="html"><![CDATA[<span id="more"></span>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;</summary>
-      
-    
-    
-    
-    <category term="test" scheme="https://blue-zy.github.io/categories/test/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>博客搭建相关</title>
