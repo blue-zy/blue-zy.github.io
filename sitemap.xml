@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blue-zy.github.io/2021/10/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    
+    <lastmod>2021-10-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blue-zy.github.io/links/index.html</loc>
     
     <lastmod>2021-10-23</lastmod>
@@ -67,7 +74,7 @@
 
   <url>
     <loc>https://blue-zy.github.io/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,28 +82,35 @@
   
   <url>
     <loc>https://blue-zy.github.io/tags/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blue-zy.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blue-zy.github.io/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blue-zy.github.io/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blue-zy.github.io/tags/Java/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -105,21 +119,21 @@
   
   <url>
     <loc>https://blue-zy.github.io/categories/test/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blue-zy.github.io/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blue-zy.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-10-23</lastmod>
+    <lastmod>2021-10-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
