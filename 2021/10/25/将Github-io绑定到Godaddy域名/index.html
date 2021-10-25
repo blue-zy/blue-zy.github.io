@@ -52,19 +52,19 @@
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
+
   
 <link rel="stylesheet" href="/css/style.css">
+
 
   <!-- monokai theme -->
   
 <link rel="stylesheet" href="/css/theme/monokai-hook.css">
 
   
-<link rel="stylesheet" href="/css/theme/monokai.css">
-
-  
 <link rel="stylesheet" href="/css/theme/common.css">
 
+  
   
   
   
@@ -73,7 +73,7 @@
   
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <script src="https://cdn.jsdelivr.net/gh/bobcn/hexo_resize_image.js@master/hexo_resize_image.js"></script>
@@ -431,7 +431,7 @@
 <h3 id="设置dns域名解析"><a class="markdownIt-Anchor" href="#设置dns域名解析"></a> 设置dns域名解析</h3>
 <p>我们不用自带的域名解析，直接用<a target="_blank" rel="noopener" href="https://www.dnspod.cn/">DNSPOD</a>解析。<br />
 首先我们先看看github.io的IP地址，直接ping或者nslookup也行。</p>
-<pre class="hljs"><code class="">ping username.github.io // username为个人用户名
+<pre class="highlight"><code class="">ping username.github.io // username为个人用户名
 
 nslookup username.github.io // username为个人用户名
 </code></pre>
@@ -460,7 +460,7 @@ nslookup username.github.io // username为个人用户名
 <p><img src="https://zhouyi.me/pic/20211025/goddy_dnspod.png" alt="avatar" /></p>
 <h3 id="github-pages设置和项目设置"><a class="markdownIt-Anchor" href="#github-pages设置和项目设置"></a> github pages设置和项目设置</h3>
 <p>之后我们向github.io项目中添加一个名为<code>CNAME</code>(大写) 的文件，里面只包含顶级域名，如下：</p>
-<pre class="hljs"><code class="">zhouyi.me
+<pre class="highlight"><code class="">zhouyi.me
 </code></pre>
 <!-- ![avatar](../pic/20211025/github_CNAME.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/github_CNAME.png" alt="avatar" /></p>
@@ -469,7 +469,7 @@ nslookup username.github.io // username为个人用户名
 <p><img src="https://zhouyi.me/pic/20211025/github_pages_domain.png" alt="avatar" /></p>
 <p>另外，如果我们用hexo部署的话，每次都会重新生成静态文件，因此我们需要直接将<code>CNAME</code>文件放入部署博客的源码中的<code>source</code>目录下，这样每次生成静态文件就会带上此目录的<code>CNAME</code>文件。</p>
 <p>最后，记得更改项目中的<code>_config.yml</code>设置文件。</p>
-<pre class="hljs"><code class="">url: https://zhouyi.me/
+<pre class="highlight"><code class="">url: https://zhouyi.me/
 </code></pre>
 <p>有些插件如生成sitemap的插件是根据此来生成的，关于如何生成站点地图以及提交网址到搜索引擎请参考<a href="https://zhouyi.me/2021/09/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/#%E5%B0%86%E7%BD%91%E5%9D%80%E6%94%B6%E5%BD%95%E5%88%B0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E">此链接</a>。</p>
 
@@ -714,79 +714,78 @@ $(function () {
 </script>
 
   
-    <style>
-      .copy-btn {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 20px;
-        color: #333;
-        white-space: nowrap;
-        vertical-align: middle;
-        cursor: pointer;
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-        user-select: none;
-        outline: 0;
-      }
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
   
-      .highlight-wrap .copy-btn {
-        transition: opacity .3s ease-in-out;
-        opacity: 0;
-        padding: 2px 6px;
-        position: absolute;
-        right: 4px;
-        top: 8px;
-        z-index: 2;
-      }
-  
-      .highlight-wrap:hover .copy-btn,
-          .highlight-wrap .copy-btn:focus {
-        opacity: 1
-      }
-  
-      .highlight-wrap {
-        position: relative;
-      }
-    </style>
-    
-    <script>
-      addLoadEvent(()=>{
-        $('.highlight').each(function (i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-            var code = $(this).parent().find(".code")[0].innerText
-            
-            var ta = document.createElement('textarea')
-            document.body.appendChild(ta)
-            ta.style.position = 'absolute'
-            ta.style.top = '0px'
-            ta.style.left = '0px'
-            ta.value = code
-            ta.select()
-            ta.focus()
-            var result = document.execCommand('copy')
-            document.body.removeChild(ta)
-            
-              if(result)$(this).text('复制成功')
-              else $(this).text('复制失败')
-            
-            $(this).blur()
-          })).on('mouseleave', function (e) {
-            var $b = $(this).find('.copy-btn')
-            setTimeout(function () {
-              $b.text('复制')
-            }, 300)
-          }).append(e)
-        })
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+          var code = $(this).parent().find("code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('复制')
+          }, 300)
+        }).append(e)
       })
-    </script>
-  
-  
+    })
+  </script>
+
 
 </body>
 </html>

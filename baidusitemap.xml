@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://zhouyi.me/2021/10/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-10-25</lastmod>
+  </url>
+  <url>
+    <loc>https://zhouyi.me/2021/08/15/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2021-10-25</lastmod>
+  </url>
+  <url>
     <loc>https://zhouyi.me/2021/09/24/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2021-10-25</lastmod>
   </url>
@@ -29,16 +37,8 @@
     <lastmod>2021-10-25</lastmod>
   </url>
   <url>
-    <loc>https://zhouyi.me/2021/10/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-10-25</lastmod>
-  </url>
-  <url>
     <loc>https://zhouyi.me/2021/10/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</loc>
     <lastmod>2021-10-25</lastmod>
-  </url>
-  <url>
-    <loc>https://zhouyi.me/2021/08/15/%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2021-10-23</lastmod>
   </url>
   <url>
     <loc>https://zhouyi.me/2021/08/13/hello-world/</loc>

@@ -57,19 +57,19 @@
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
+
   
 <link rel="stylesheet" href="/css/style.css">
+
 
   <!-- monokai theme -->
   
 <link rel="stylesheet" href="/css/theme/monokai-hook.css">
 
   
-<link rel="stylesheet" href="/css/theme/monokai.css">
-
-  
 <link rel="stylesheet" href="/css/theme/common.css">
 
+  
   
   
   
@@ -78,7 +78,7 @@
   
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <script src="https://cdn.jsdelivr.net/gh/bobcn/hexo_resize_image.js@master/hexo_resize_image.js"></script>
@@ -427,14 +427,14 @@
 </ul>
 <h3 id="查看网站是否被收录"><a class="markdownIt-Anchor" href="#查看网站是否被收录"></a> 查看网站是否被收录</h3>
 <p>在搜索引擎输入以下命令进行搜索。</p>
-<pre class="hljs"><code class="">site:zhouyi.me
+<pre class="highlight"><code class="">site:zhouyi.me
 </code></pre>
 <p>出现如下回应则表示被收录的，否则就是没有</p>
 <!-- ![avatar](../pic/20211025/google_search.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/google_search.png" alt="avatar" /></p>
 <h3 id="生成站点地图"><a class="markdownIt-Anchor" href="#生成站点地图"></a> 生成站点地图</h3>
 <p>hexo是有生成站点地图的插件的，输入以下命令进行安装。</p>
-<pre class="hljs"><code class="">npm install hexo-generator-sitemap
+<pre class="highlight"><code class="">npm install hexo-generator-sitemap
 </code></pre>
 <p>之后每次生成静态文件的时候目录下就会有站点地图文件<code>sitemap.xml</code>。</p>
 <h3 id="添加到google"><a class="markdownIt-Anchor" href="#添加到google"></a> 添加到Google</h3>
@@ -477,7 +477,7 @@
 如果采用第二种方法，和添加到Google的方法一样，添加<code>&lt;meta&gt;</code>元素。</p>
 <p>之后进行提交站点地图。<br />
 百度有专门的站点地图，我也不知道为啥，看了一眼生成的文件其实差不多。输入以下命令安装插件，之后生成静态文件的时候会在<code>sitemap.xml</code>同级目录下生成<code>baidusitemap.xml</code>。我们直接两个都提交。</p>
-<pre class="hljs"><code class="">npm install hexo-generator-baidu-sitemap
+<pre class="highlight"><code class="">npm install hexo-generator-baidu-sitemap
 </code></pre>
 <!-- ![avatar](../pic/20211025/baidu_add_sitemap.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/baidu_add_sitemap.png" alt="avatar" /></p>
@@ -490,10 +490,10 @@
 <!-- ![avatar](../pic/20211025/baidu_add_api.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/baidu_add_api.png" alt="avatar" /><br />
 首先，输入以下命令安装插件</p>
-<pre class="hljs"><code class="">npm install hexo-baidu-url-submit
+<pre class="highlight"><code class="">npm install hexo-baidu-url-submit
 </code></pre>
 <p>之后在<code>_config.yml</code>文件添加如下配置，如下：</p>
-<pre class="hljs"><code class="">baidu_url_submit:
+<pre class="highlight"><code class="">baidu_url_submit:
   count: 30  // 提交最新的多少链接
   host: https://zhouyi.me // 添加的域名
   token: xxxxxx // 上图中的token
@@ -506,7 +506,7 @@ deploy:
 - type: baidu_url_submitter
 </code></pre>
 <p>之后进行部署</p>
-<pre class="hljs"><code class="">hexo clean
+<pre class="highlight"><code class="">hexo clean
 hexo g
 hexo d
 </code></pre>
@@ -514,7 +514,7 @@ hexo d
 <!-- ![avatar](../pic/20211025/baidu_add_api_success.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/baidu_add_api_success.png" alt="avatar" /></p>
 <p>若输出如下形式，则表示推送成功</p>
-<pre class="hljs"><code class="">&#123;&quot;remain&quot;:2988,&quot;success&quot;:12&#125;
+<pre class="highlight"><code class="">&#123;&quot;remain&quot;:2988,&quot;success&quot;:12&#125;
 INFO  Deploy done: baidu_url_submitter
 </code></pre>
 
@@ -759,79 +759,78 @@ $(function () {
 </script>
 
   
-    <style>
-      .copy-btn {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 20px;
-        color: #333;
-        white-space: nowrap;
-        vertical-align: middle;
-        cursor: pointer;
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-        user-select: none;
-        outline: 0;
-      }
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
   
-      .highlight-wrap .copy-btn {
-        transition: opacity .3s ease-in-out;
-        opacity: 0;
-        padding: 2px 6px;
-        position: absolute;
-        right: 4px;
-        top: 8px;
-        z-index: 2;
-      }
-  
-      .highlight-wrap:hover .copy-btn,
-          .highlight-wrap .copy-btn:focus {
-        opacity: 1
-      }
-  
-      .highlight-wrap {
-        position: relative;
-      }
-    </style>
-    
-    <script>
-      addLoadEvent(()=>{
-        $('.highlight').each(function (i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-            var code = $(this).parent().find(".code")[0].innerText
-            
-            var ta = document.createElement('textarea')
-            document.body.appendChild(ta)
-            ta.style.position = 'absolute'
-            ta.style.top = '0px'
-            ta.style.left = '0px'
-            ta.value = code
-            ta.select()
-            ta.focus()
-            var result = document.execCommand('copy')
-            document.body.removeChild(ta)
-            
-              if(result)$(this).text('复制成功')
-              else $(this).text('复制失败')
-            
-            $(this).blur()
-          })).on('mouseleave', function (e) {
-            var $b = $(this).find('.copy-btn')
-            setTimeout(function () {
-              $b.text('复制')
-            }, 300)
-          }).append(e)
-        })
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+          var code = $(this).parent().find("code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('复制')
+          }, 300)
+        }).append(e)
       })
-    </script>
-  
-  
+    })
+  </script>
+
 
 </body>
 </html>

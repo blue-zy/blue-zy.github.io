@@ -50,19 +50,19 @@
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
+
   
 <link rel="stylesheet" href="/css/style.css">
+
 
   <!-- monokai theme -->
   
 <link rel="stylesheet" href="/css/theme/monokai-hook.css">
 
   
-<link rel="stylesheet" href="/css/theme/monokai.css">
-
-  
 <link rel="stylesheet" href="/css/theme/common.css">
 
+  
   
   
   
@@ -71,7 +71,7 @@
   
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <script src="https://cdn.jsdelivr.net/gh/bobcn/hexo_resize_image.js@master/hexo_resize_image.js"></script>
@@ -432,14 +432,14 @@
 <!-- ![avatar](../pic/20211025/github_new.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/github_new.png" alt="avatar" /></p>
 <p>接着点击setting，往下直到github pages部分，点进去。</p>
-<pre class="hljs"><code class="">Pages settings now has its own dedicated tab! Check it out here!
+<pre class="highlight"><code class="">Pages settings now has its own dedicated tab! Check it out here!
 </code></pre>
 <!-- ![avatar](../pic/20211025/github_pages_published.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/github_pages_published.png" alt="avatar" /><br />
 浏览器输入 <a target="_blank" rel="noopener" href="https://zhouzhou84751.github.io/">https://zhouzhou84751.github.io/</a> 即可以进入自己的github pages。</p>
 <p>接着关联本地的git和github。<br />
 打开命令提示符输入以下命令。</p>
-<pre class="hljs"><code class="">git config --global user.name &quot;username&quot; // username根据自己的github账号填入
+<pre class="highlight"><code class="">git config --global user.name &quot;username&quot; // username根据自己的github账号填入
 git config --global user.email &quot;xxx@xxx.com&quot; // email根据自己的github账号填入
 
 ssh-keygen -t rsa -C &quot;xxx@xxx.com&quot; // email根据自己的github账号填入 一路回车即可
@@ -455,14 +455,14 @@ Title随便填，Key粘贴刚刚复制的内容。</p>
 <!-- ![avatar](../pic/20211025/github_ssh.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/github_ssh.png" alt="avatar" /></p>
 <p>此时命令提示符输入如下命令会提示添加成功。</p>
-<pre class="hljs"><code class="">ssh -T git@github.com
+<pre class="highlight"><code class="">ssh -T git@github.com
 
 Hi zhouzhou84751! You've successfully authenticated, but GitHub does not provide shell access.
 </code></pre>
 <h3 id="部署hexo"><a class="markdownIt-Anchor" href="#部署hexo"></a> 部署hexo</h3>
 <p>在本地选择一个你喜欢的文件夹目录，初始化hexo。<br />
 在命令行输入以下命令初始化。</p>
-<pre class="hljs"><code class="">hexo init myblog // 初始化
+<pre class="highlight"><code class="">hexo init myblog // 初始化
 hexo s // 部署在本地服务器 默认端口为4000
 </code></pre>
 <!-- ![avatar](../pic/20211025/hexo_s.png) -->
@@ -471,7 +471,7 @@ hexo s // 部署在本地服务器 默认端口为4000
 <!-- ![avatar](../pic/20211025/hexo_helloword.png) -->
 <p><img src="https://zhouyi.me/pic/20211025/hexo_helloword.png" alt="avatar" /></p>
 <p>接着对部分目录结构进行说明。</p>
-<pre class="hljs"><code class="">// 模板目录 如输入hexo n post hello时会以此目录下的post.md为模板在source/_posts新建hello.md
+<pre class="highlight"><code class="">// 模板目录 如输入hexo n post hello时会以此目录下的post.md为模板在source/_posts新建hello.md
 - scaffolds
 
 // 博文目录
@@ -484,7 +484,7 @@ hexo s // 部署在本地服务器 默认端口为4000
 - themes
 </code></pre>
 <p>接着对部分命令进行说明。</p>
-<pre class="hljs"><code class="">// []表示可以省略的内容 &lt;&gt;表示变量名，即输入的参数
+<pre class="highlight"><code class="">// []表示可以省略的内容 &lt;&gt;表示变量名，即输入的参数
 
 // 新建文章，未指定layout则默认使用_config.yml中的default_layout参数的layout
 hexo n [layout] &lt;title&gt;
@@ -502,7 +502,7 @@ hexo s
 hexo d
 </code></pre>
 <p>更改配置文件<code>_config.yml</code>。</p>
-<pre class="hljs"><code class="">title: my blog // 网站标题
+<pre class="highlight"><code class="">title: my blog // 网站标题
 author: zhouzhou84751 // 作者
 language: zh-CN // 语言
 
@@ -516,15 +516,15 @@ deploy:
   branch: main // 项目分支 默认是main
 </code></pre>
 <p>基础配置完毕后，安装<code>hexo-deployer-git</code>插件。更多说明请参照<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">hexo官方文档</a>。</p>
-<pre class="hljs"><code class="">npm install hexo-deployer-git --save
+<pre class="highlight"><code class="">npm install hexo-deployer-git --save
 </code></pre>
 <p>部署到github pages。</p>
-<pre class="hljs"><code class="">hexo clean
+<pre class="highlight"><code class="">hexo clean
 hexo g
 hexo d
 </code></pre>
 <p>每次部署最好都执行clean和generate命令，这样每次输入三个命令太麻烦了，我们可以添加到hexo项目中的<code>package.json</code>中<code>scripts</code>中，新建一个upload变量如下所示。</p>
-<pre class="hljs"><code class="">  &quot;scripts&quot;: &#123;
+<pre class="highlight"><code class="">  &quot;scripts&quot;: &#123;
     // 默认命令
     &quot;build&quot;: &quot;hexo generate&quot;,
     &quot;clean&quot;: &quot;hexo clean&quot;,
@@ -535,7 +535,7 @@ hexo d
   &#125;,
 </code></pre>
 <p>这样每次运行以下命令就可以直接一键三连部署。</p>
-<pre class="hljs"><code class="">npm run upload
+<pre class="highlight"><code class="">npm run upload
 </code></pre>
 <h3 id="备份博客"><a class="markdownIt-Anchor" href="#备份博客"></a> 备份博客</h3>
 <p>虽然我们将hexo博客部署到github.io项目上面，但是我们用来部署的源码依旧在本地，因此推荐新建一个<strong>私人仓库</strong>上传hexo项目，因为源码中的设置涉及到很多token之类的信息，最好不要设为公开项目。</p>
@@ -781,79 +781,78 @@ $(function () {
 </script>
 
   
-    <style>
-      .copy-btn {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 20px;
-        color: #333;
-        white-space: nowrap;
-        vertical-align: middle;
-        cursor: pointer;
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-        user-select: none;
-        outline: 0;
-      }
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
   
-      .highlight-wrap .copy-btn {
-        transition: opacity .3s ease-in-out;
-        opacity: 0;
-        padding: 2px 6px;
-        position: absolute;
-        right: 4px;
-        top: 8px;
-        z-index: 2;
-      }
-  
-      .highlight-wrap:hover .copy-btn,
-          .highlight-wrap .copy-btn:focus {
-        opacity: 1
-      }
-  
-      .highlight-wrap {
-        position: relative;
-      }
-    </style>
-    
-    <script>
-      addLoadEvent(()=>{
-        $('.highlight').each(function (i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-            var code = $(this).parent().find(".code")[0].innerText
-            
-            var ta = document.createElement('textarea')
-            document.body.appendChild(ta)
-            ta.style.position = 'absolute'
-            ta.style.top = '0px'
-            ta.style.left = '0px'
-            ta.value = code
-            ta.select()
-            ta.focus()
-            var result = document.execCommand('copy')
-            document.body.removeChild(ta)
-            
-              if(result)$(this).text('复制成功')
-              else $(this).text('复制失败')
-            
-            $(this).blur()
-          })).on('mouseleave', function (e) {
-            var $b = $(this).find('.copy-btn')
-            setTimeout(function () {
-              $b.text('复制')
-            }, 300)
-          }).append(e)
-        })
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+          var code = $(this).parent().find("code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('复制')
+          }, 300)
+        }).append(e)
       })
-    </script>
-  
-  
+    })
+  </script>
+
 
 </body>
 </html>

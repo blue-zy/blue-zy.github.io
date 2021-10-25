@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/sort.png">
 <meta property="article:published_time" content="2021-10-24T04:54:59.000Z">
-<meta property="article:modified_time" content="2021-10-25T16:02:53.728Z">
+<meta property="article:modified_time" content="2021-10-25T21:48:35.247Z">
 <meta property="article:author" content="zy">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
@@ -52,19 +52,19 @@
   
     <link rel="icon" href="/favicon.png" type="image/x-icon">
   
+
   
 <link rel="stylesheet" href="/css/style.css">
+
 
   <!-- monokai theme -->
   
 <link rel="stylesheet" href="/css/theme/monokai-hook.css">
 
   
-<link rel="stylesheet" href="/css/theme/monokai.css">
-
-  
 <link rel="stylesheet" href="/css/theme/common.css">
 
+  
   
   
   
@@ -73,7 +73,7 @@
   
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.css">
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 <script src="https://cdn.jsdelivr.net/gh/bobcn/hexo_resize_image.js@master/hexo_resize_image.js"></script>
@@ -435,7 +435,7 @@
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/03/bubbleSort.gif" alt="avatar" /><br />
 顾名思义，冒泡排序就是两两比较，将最大的放在最底下，利用如同冒泡一样将元素上升的方法。<br />
 由于比较基础也比较容易理解，直接上代码。</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
       <span class="hljs-keyword">boolean</span> isSort = <span class="hljs-keyword">false</span>; <span class="hljs-comment">// 增加标志位，如果一个循环里没有发生数据交换，则证明已经排序好了</span>
       <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length &amp;&amp; !isSort; i++) &#123;
         <span class="hljs-comment">// 每次让最大的泡泡升出来</span>
@@ -463,7 +463,7 @@
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/03/selectionSort.gif" alt="avatar" /><br />
 类似打擂台的方法，每次循环选出一个值跟所有值比较，最后最小值胜出。<br />
 也比较容易理解，直接上代码。</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
       <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; arr.length - <span class="hljs-number">1</span>; i++) &#123;
           <span class="hljs-keyword">int</span> minIndex = i;
           <span class="hljs-comment">// 选出最小值的索引</span>
@@ -491,7 +491,7 @@
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/03/insertionSort.gif" alt="avatar" /><br />
 两两比较，比较的过程中，元素一直往后移。<br />
 结合动图理解起来也比较直观，上代码。</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
       <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++) &#123;
           <span class="hljs-keyword">int</span> j = i;
           <span class="hljs-keyword">int</span> temp = arr[j]; <span class="hljs-comment">// 先把要插入的数挖出来</span>
@@ -518,7 +518,7 @@
 如3,2,1有两个逆序对，若通过简单插入排序，一次只能消除一个逆序对。通过希尔排序则可以让3和1直接交换，达到消除多对逆序对的效果。<br />
 另外，简单插入排序对于数组部分有序的逆序对较少的情况，时间复杂度也比较低。<br />
 综合上述，首先大幅度减少逆序对，之后再不断减少增量值，最后便转化为简单插入排序，此时已经部分有序，所以效果比直接用插入排序算法要好得多。</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;
       <span class="hljs-comment">// 在此我们将增量设置为length/2 每次缩小一半</span>
       <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> step = arr.length/<span class="hljs-number">2</span>; step &gt;<span class="hljs-number">0</span> ; step/=<span class="hljs-number">2</span>) &#123;
           <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = step; i &lt; arr.length; i++) &#123;
@@ -547,7 +547,7 @@
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif" alt="avatar" /><br />
 归并排序主要采用了分治和递归的思想。如上图所示，二路归并是将数据平分成两组各自进行排序，之后再将这两组排序的结果再进行排序，一直递归调用。<br />
 代码如下：</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;
     <span class="hljs-keyword">if</span>(left&lt;right)&#123;
       <span class="hljs-keyword">int</span> middle = (left + right)/<span class="hljs-number">2</span>;
       sort(arr, left, middle);
@@ -596,7 +596,7 @@
 具体的排序思想是，先找出一个基准(pivot)，之后将比基准大的值放在基准的后面，而小的值放在前面，也就是说，每次的排序相当于将这个基准值归位。<br />
 之后再递归地将基准左右的值进行快速排序。<br />
 代码如下：</p>
-<pre class="hljs"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;
+<pre class="highlight"><code class="java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;
     <span class="hljs-keyword">if</span>(left&lt;right)&#123;
       <span class="hljs-keyword">int</span> pivot = arr[left];
       <span class="hljs-keyword">int</span> i = left;
@@ -898,79 +898,78 @@ $(function () {
 </script>
 
   
-    <style>
-      .copy-btn {
-        display: inline-block;
-        padding: 6px 12px;
-        font-size: 13px;
-        font-weight: 700;
-        line-height: 20px;
-        color: #333;
-        white-space: nowrap;
-        vertical-align: middle;
-        cursor: pointer;
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-        user-select: none;
-        outline: 0;
-      }
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+      z-index: 2;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+        .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
   
-      .highlight-wrap .copy-btn {
-        transition: opacity .3s ease-in-out;
-        opacity: 0;
-        padding: 2px 6px;
-        position: absolute;
-        right: 4px;
-        top: 8px;
-        z-index: 2;
-      }
-  
-      .highlight-wrap:hover .copy-btn,
-          .highlight-wrap .copy-btn:focus {
-        opacity: 1
-      }
-  
-      .highlight-wrap {
-        position: relative;
-      }
-    </style>
-    
-    <script>
-      addLoadEvent(()=>{
-        $('.highlight').each(function (i, e) {
-          var $wrap = $('<div>').addClass('highlight-wrap')
-          $(e).after($wrap)
-          $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-            var code = $(this).parent().find(".code")[0].innerText
-            
-            var ta = document.createElement('textarea')
-            document.body.appendChild(ta)
-            ta.style.position = 'absolute'
-            ta.style.top = '0px'
-            ta.style.left = '0px'
-            ta.value = code
-            ta.select()
-            ta.focus()
-            var result = document.execCommand('copy')
-            document.body.removeChild(ta)
-            
-              if(result)$(this).text('复制成功')
-              else $(this).text('复制失败')
-            
-            $(this).blur()
-          })).on('mouseleave', function (e) {
-            var $b = $(this).find('.copy-btn')
-            setTimeout(function () {
-              $b.text('复制')
-            }, 300)
-          }).append(e)
-        })
+  <script>
+    addLoadEvent(()=>{
+      $('.highlight').each(function (i, e) {
+        var $wrap = $('<div>').addClass('highlight-wrap')
+        $(e).after($wrap)
+        $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+          var code = $(this).parent().find("code")[0].innerText
+          
+          var ta = document.createElement('textarea')
+          document.body.appendChild(ta)
+          ta.style.position = 'absolute'
+          ta.style.top = '0px'
+          ta.style.left = '0px'
+          ta.value = code
+          ta.select()
+          ta.focus()
+          var result = document.execCommand('copy')
+          document.body.removeChild(ta)
+          
+            if(result)$(this).text('复制成功')
+            else $(this).text('复制失败')
+          
+          $(this).blur()
+        })).on('mouseleave', function (e) {
+          var $b = $(this).find('.copy-btn')
+          setTimeout(function () {
+            $b.text('复制')
+          }, 300)
+        }).append(e)
       })
-    </script>
-  
-  
+    })
+  </script>
+
 
 </body>
 </html>

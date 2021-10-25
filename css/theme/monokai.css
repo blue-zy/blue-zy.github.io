@@ -1,11 +1,31 @@
 /* build time:Wed Sep 15 2021 23:27:27 GMT+0800 (China Standard Time)*/
 
-.hljs {
+code {
+    color: #000;
+    background: #eee;
+    font-family: 'Consolas';
+    /* font-family: 'Droid Sans Mono', 'Consolas', 'Menlo', 'Monaco', 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'monospace', 'serif'; */
+    font-size: 16px; 
+    font-style: normal;
+    font-variant: normal; 
+    /* letter-spacing: 0.05em */
+  }
+
+/* .hljs code{
     display: block;
     overflow-x: auto;
     padding: .5em;
-    background: #eee;
-    color: #ddd
+    background: #272822;
+    color: #a9b7c6;
+    font-size: 16px
+} */
+.highlight code{
+    display: block;
+    overflow-x: auto;
+    padding: .5em;
+    background: #272822;
+    color: #a9b7c6;
+    font-size: 16px
 }
 
 .hljs-keyword,
@@ -14,7 +34,7 @@
 .hljs-selector-tag,
 .hljs-strong,
 .hljs-tag {
-    color: #f92672
+    color: #cc7832
 }
 
 .hljs-code {
@@ -40,21 +60,28 @@
 .hljs-section,
 .hljs-selector-attr,
 .hljs-selector-pseudo,
-.hljs-string,
+
 .hljs-subst,
 .hljs-template-tag,
 .hljs-template-variable,
 .hljs-title,
 .hljs-type,
 .hljs-variable {
-    color: #a6e22e
+    color: #ffc66d
+}
+
+.hljs-string {
+    color: #6a8759;
+}
+.hljs-number {
+    color: #6897bb;
 }
 
 .hljs-comment,
 .hljs-deletion,
 .hljs-meta,
 .hljs-quote {
-    color: #75715e
+    color: #b0b0b0
 }
 
 .hljs-doctag,
