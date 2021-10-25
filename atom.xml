@@ -6,7 +6,7 @@
   <link href="https://zhouyi.me/atom.xml" rel="self"/>
   
   <link href="https://zhouyi.me/"/>
-  <updated>2021-10-24T18:03:49.006Z</updated>
+  <updated>2021-10-25T03:27:09.771Z</updated>
   <id>https://zhouyi.me/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树遍历</title>
+    <link href="https://zhouyi.me/2021/10/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/"/>
+    <id>https://zhouyi.me/2021/10/25/%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86/</id>
+    <published>2021-10-25T03:12:22.000Z</published>
+    <updated>2021-10-25T03:27:09.771Z</updated>
+    
+    <content type="html"><![CDATA[<p>二叉树的前序遍历，中序遍历，后序遍历与层序遍历。</p><span id="more"></span><h3 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h3><p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/1024px-Binary_tree.svg.png?80" alt="avatar" /></p><ul><li>前（根）序遍历<br />按照 <strong>根-&gt;左-&gt;右</strong> 的顺序进行遍历。<br />上图前序遍历结果：2 - 7 - 2 - 6 - 5 - 11 - 5 - 9 - 4</li><li>中（根）序遍历<br />按照 <strong>左-&gt;根-&gt;右</strong> 的顺序进行遍历。<br />上图中序遍历结果：2 - 7 - 5 - 6 - 11 - 2 - 5 - 4 - 9</li><li>后（根）序遍历<br />按照 <strong>左-&gt;右-&gt;根</strong> 的顺序进行遍历。<br />上图后序遍历结果：2 - 5 - 11 - 6 - 7 - 4 - 9 - 5 -2</li><li>层序遍历<br />按照层级进行遍历，类似于图的广度优先搜索<br />上图层序遍历结果：2 - 7 - 5 - 2 - 6 - 9 - 5 - 11 - 4</li></ul><h3 id="前序遍历"><a class="markdownIt-Anchor" href="#前序遍历"></a> 前序遍历</h3><pre class="hljs"><code class="java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PreOrder</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;        <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) &#123;            <span class="hljs-keyword">return</span>;        &#125;        Stack&lt;TreeNode&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();        <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span> || !stack.isEmpty()) &#123;            <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) &#123;                System.out.print(node.getVal()+<span class="hljs-string">" "</span>);                stack.push(node);                node = node.getLeft();            &#125;            <span class="hljs-keyword">if</span> (!stack.isEmpty()) &#123;                TreeNode pop = stack.pop();                node = pop.getRight();            &#125;        &#125;    &#125;</code></pre><h3 id="中序遍历"><a class="markdownIt-Anchor" href="#中序遍历"></a> 中序遍历</h3><pre class="hljs"><code class="java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">MidOrder</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;        <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) &#123;            <span class="hljs-keyword">return</span>;        &#125;        Stack&lt;TreeNode&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();        <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span> || !stack.isEmpty()) &#123;            <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) &#123;                stack.push(node);                node = node.getLeft();            &#125;            <span class="hljs-keyword">if</span> (!stack.isEmpty()) &#123;                TreeNode pop = stack.pop();                System.out.print(pop.getVal()+<span class="hljs-string">" "</span>);                node = pop.getRight();            &#125;        &#125;    &#125;</code></pre><h3 id="后序遍历"><a class="markdownIt-Anchor" href="#后序遍历"></a> 后序遍历</h3><pre class="hljs"><code class="java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">PosOrder</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;        <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) &#123;            <span class="hljs-keyword">return</span>;        &#125;        <span class="hljs-comment">// 保存最后一个被访问的节点，用来判断节点的右子树是否被访问过</span>        TreeNode lastVisitedNode = <span class="hljs-keyword">null</span>;        Stack&lt;TreeNode&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;&gt;();        <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span> || !stack.isEmpty()) &#123;            <span class="hljs-keyword">while</span> (node != <span class="hljs-keyword">null</span>) &#123;                stack.push(node);                node = node.getLeft();            &#125;            <span class="hljs-keyword">if</span> (!stack.isEmpty()) &#123;                <span class="hljs-comment">// 一个节点可以访问的前提是自己没有右子树或者右子树被访问过</span>                TreeNode pop = stack.pop();                <span class="hljs-keyword">if</span> (pop.getRight() == <span class="hljs-keyword">null</span> || pop.getRight() == lastVisitedNode) &#123;                    lastVisitedNode = pop;                    System.out.print(pop.getVal() + <span class="hljs-string">" "</span>);                &#125; <span class="hljs-keyword">else</span> &#123;                    node = pop.getRight();                    stack.push(pop);                &#125;            &#125;        &#125;    &#125;</code></pre><h3 id="层序遍历"><a class="markdownIt-Anchor" href="#层序遍历"></a> 层序遍历</h3><pre class="hljs"><code class="java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">LevOrder</span><span class="hljs-params">(TreeNode node)</span> </span>&#123;        <span class="hljs-keyword">if</span> (node == <span class="hljs-keyword">null</span>) &#123;            <span class="hljs-keyword">return</span>;        &#125;        Queue&lt;TreeNode&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();        queue.offer(node);        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;            TreeNode poll = queue.poll();            System.out.print(poll.getVal()+<span class="hljs-string">" "</span>);            <span class="hljs-keyword">if</span> (poll.getLeft() != <span class="hljs-keyword">null</span>) &#123;                queue.offer(poll.getLeft());            &#125;            <span class="hljs-keyword">if</span> (poll.getRight() != <span class="hljs-keyword">null</span>) &#123;                queue.offer(poll.getRight());            &#125;        &#125;    &#125;</code></pre>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;二叉树的前序遍历，中序遍历，后序遍历与层序遍历。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="算法" scheme="https://zhouyi.me/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="二叉树" scheme="https://zhouyi.me/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    
+    <category term="算法" scheme="https://zhouyi.me/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试准备</title>
+    <link href="https://zhouyi.me/2021/10/25/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/"/>
+    <id>https://zhouyi.me/2021/10/25/%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87/</id>
+    <published>2021-10-25T03:01:06.000Z</published>
+    <updated>2021-10-25T03:11:56.426Z</updated>
+    
+    <content type="html"><![CDATA[<p>个人面试准备的复习资料。</p><span id="more"></span><h3 id="java基础"><a class="markdownIt-Anchor" href="#java基础"></a> Java基础</h3><ul><li><a href="">Java基础</a></li><li><a href="">JVM</a></li><li><a href="">多线程</a></li><li><a href="">Java集合容器</a></li><li><a href="">Java反射注解泛型</a></li></ul><h3 id="mysql"><a class="markdownIt-Anchor" href="#mysql"></a> Mysql</h3><ul><li><a href="">mysql应用篇</a></li><li><a href="">mysql原理篇</a></li></ul><h3 id="计算机网络和操作系统"><a class="markdownIt-Anchor" href="#计算机网络和操作系统"></a> 计算机网络和操作系统</h3><ul><li><a href="">计算机网络</a></li><li><a href="">操作系统</a></li></ul><h3 id="数据结构与算法"><a class="markdownIt-Anchor" href="#数据结构与算法"></a> 数据结构与算法</h3><ul><li><a href="https://zhouyi.me/2021/10/25/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a></li><li><a href="https://zhouyi.me/2021/10/24/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">排序算法</a></li><li><a href="">二叉树遍历</a></li></ul><h3 id="设计模式"><a class="markdownIt-Anchor" href="#设计模式"></a> 设计模式</h3><ul><li><a href="">单例模式</a></li><li><a href="">工厂模式</a></li><li><a href="">代理模式</a></li></ul><h3 id="redis"><a class="markdownIt-Anchor" href="#redis"></a> Redis</h3><ul><li><a href="">Redis知识复习</a></li></ul><h3 id="spring相关"><a class="markdownIt-Anchor" href="#spring相关"></a> Spring相关</h3><ul><li><a href="">Spring</a></li><li><a href="">SpringBoot</a></li><li><a href="">Mybatis</a></li></ul><h3 id="个人项目笔记"><a class="markdownIt-Anchor" href="#个人项目笔记"></a> 个人项目笔记</h3><ul><li><a href="">论坛管理项目</a></li><li><a href="">Spring容器项目</a></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;个人面试准备的复习资料。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Java" scheme="https://zhouyi.me/categories/Java/"/>
+    
+    
+    <category term="Java" scheme="https://zhouyi.me/tags/Java/"/>
+    
+    <category term="面试" scheme="https://zhouyi.me/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>数据结构</title>
