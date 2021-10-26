@@ -30,11 +30,14 @@
 <meta property="og:site_name" content="Blue Cat">
 <meta property="og:description" content="此文介绍常见的数据结构">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/d/d8/HuffmanCodeAlg.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Huffman_coding_example.svg/640px-Huffman_coding_example.svg.png">
 <meta property="article:published_time" content="2021-10-24T17:00:53.000Z">
-<meta property="article:modified_time" content="2021-10-26T15:36:12.284Z">
+<meta property="article:modified_time" content="2021-10-26T17:43:07.919Z">
 <meta property="article:author" content="zy">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/d/d8/HuffmanCodeAlg.png">
   <!-- Canonical links -->
   <link rel="canonical" href="https://zhouyi.me/2021/10/25/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
   
@@ -391,10 +394,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/25/%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.1k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.5k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 7(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
 	
 
       </div>
@@ -625,11 +628,36 @@
 </ul>
 <p>特殊的二叉树</p>
 <ul>
-<li>满二叉树</li>
-<li>完全二叉树</li>
+<li>满二叉树：深度为k时，结点数量为2^k - 1。</li>
+<li>完全二叉树：深度为k时，所有结点的编号与深度为k的满二叉树一一对应。
+<ul>
+<li>路径：一个结点到另一个结点的途径。</li>
+<li>路径长度：路径上的分支数目，即每经过一个结点长度加1。</li>
+<li>树的路径长度：树根到每一个结点的路径长度之和。</li>
+<li>完全二叉树就是路径长度最短的二叉树。</li>
+</ul>
+</li>
 <li>最优二叉树
 <ul>
-<li>赫夫曼编码</li>
+<li>结点带权路径：该结点到树根之间的路径长度与结点的权值乘积。</li>
+<li>树的带权路径长度：树中所有<strong>叶子结点</strong>的带权路径长度之和。</li>
+<li>带权路径长度WPL最小的二叉树即为最优二叉树/赫夫曼树。</li>
+<li>赫夫曼算法：用来构建赫夫曼树
+<ul>
+<li>根据给定的n个权值构成n棵二叉树集合F，其中每棵二叉树中只有一个带权的根结点，无子树。</li>
+<li>从F中选出两棵根结点权值最小的树，作为左右子树构建一棵新二叉树，新二叉树的根权值为这俩之和。</li>
+<li>将新二叉树加入到F中，移除第二步的两个二叉树。</li>
+<li>重复2和3。<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/HuffmanCodeAlg.png" alt="avatar"></li>
+</ul>
+</li>
+<li>赫夫曼编码：<br>
+对于设计长度不等的编码的情况，必须要任一个字符的编码都不是另一个字符的编码的前缀，这种编码称为前缀编码。<br>
+利用赫夫曼树进行编码如下图所示。<br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Huffman_coding_example.svg/640px-Huffman_coding_example.svg.png" alt="avatar"><br>
+| 1   | 1   |<br>
+| — | — |<br>
+| 2   | 2   |</li>
 </ul>
 </li>
 </ul>
