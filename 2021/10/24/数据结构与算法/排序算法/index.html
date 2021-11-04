@@ -36,9 +36,10 @@
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/Sorting_shellsort_anim.gif">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/mergeSort.gif">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/quickSort.gif">
+<meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif">
 <meta property="og:image" content="https://www.runoob.com/wp-content/uploads/2019/03/sort.png">
 <meta property="article:published_time" content="2021-10-24T04:54:59.000Z">
-<meta property="article:modified_time" content="2021-11-02T02:31:50.298Z">
+<meta property="article:modified_time" content="2021-11-04T01:40:01.821Z">
 <meta property="article:author" content="zy">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="排序">
@@ -400,10 +401,10 @@
         <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2021/10/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/#comments" class="article-comment-link">评论</a></span>
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.2k(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 2.6k(字)</span>
 	
 	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 8(分)</span>
+		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 10(分)</span>
 	
 
       </div>
@@ -648,9 +649,72 @@
 <p>两个概念：</p>
 <ul>
 <li>大顶堆：每个节点都大于或者等于其子节点的值，堆排序中用于升序排列。</li>
-<li>小顶堆：每个节点都小于或者等于其子节点的值，堆排序中用于降序排列。<br>
-暂略。</li>
+<li>小顶堆：每个节点都小于或者等于其子节点的值，堆排序中用于降序排列。</li>
 </ul>
+<p><img src="https://www.runoob.com/wp-content/uploads/2019/03/heapSort.gif" alt="avatar"></p>
+<ul>
+<li>完全二叉树：结点按照从上往下从左往右编号一一对应同样深度的满二叉树的对应位置的编号的二叉树。</li>
+<li>满二叉树：深度为k时，有2^k - 1个结点的二叉树。<br>
+由于完全二叉树可以用编号对应结点的，因此数组中的index可以对应成一个完全二叉树的结点编号，因此我们可以将数组看成完全二叉树来处理。<br>
+假设根节点编号为0，二叉树中的孩子结点与双亲结点的编号关系：</li>
+<li><code>left = root*2 + 1;</code></li>
+<li><code>right = root*2 + 2;</code></li>
+<li><code>parent = (root - 1)/2;</code></li>
+</ul>
+<p>根据上述关系，就可以将数组看成二叉树，进而转换成堆来进行排序。</p>
+<p>步骤如下：</p>
+<ul>
+<li>构建大顶堆</li>
+<li>将大顶堆的根结点与最后一个叶结点位置互换，去除叶结点</li>
+<li>对去除最后一个结点的完全二叉树进行heapify操作</li>
+<li>goto 步骤2</li>
+</ul>
+<pre class="highlight"><code class="java">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span></span>&#123;
+        buildHeap(nums);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = nums.length - <span class="hljs-number">1</span>; i &gt; <span class="hljs-number">0</span>; i--) &#123;
+            <span class="hljs-comment">// 将叶结点和根结点互换，并去除叶结点再堆化</span>
+            <span class="hljs-keyword">int</span> temp = nums[i];
+            nums[i] = nums[<span class="hljs-number">0</span>];
+            nums[<span class="hljs-number">0</span>] = temp;
+            <span class="hljs-comment">// i-1 代表去除了叶结点</span>
+            heapify(nums,<span class="hljs-number">0</span>,i-<span class="hljs-number">1</span>);
+        &#125;
+    &#125;
+
+    <span class="hljs-comment">// 构建大顶堆</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">buildHeap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;
+        <span class="hljs-keyword">int</span> len = nums.length-<span class="hljs-number">1</span>;
+
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = (len-<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;
+            heapify(nums,i,len);
+        &#125;
+    &#125;
+
+    <span class="hljs-comment">// 堆化操作</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">heapify</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> start, <span class="hljs-keyword">int</span> end)</span></span>&#123;
+        <span class="hljs-keyword">int</span> lastRootIndex = start;
+
+        <span class="hljs-keyword">int</span> max = lastRootIndex;
+        <span class="hljs-keyword">int</span> left = <span class="hljs-number">2</span>*lastRootIndex + <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">int</span> right = <span class="hljs-number">2</span>*lastRootIndex + <span class="hljs-number">2</span>;
+
+        <span class="hljs-keyword">if</span> (left&lt;=end &amp;&amp; nums[left]&gt;nums[max])&#123;
+            max = left;
+        &#125;
+
+        <span class="hljs-keyword">if</span> (right&lt;=end &amp;&amp; nums[right]&gt;nums[max])&#123;
+            max = right;
+        &#125;
+
+        <span class="hljs-keyword">if</span> (max != lastRootIndex) &#123;
+            <span class="hljs-keyword">int</span> temp = nums[max];
+            nums[max] = nums[lastRootIndex];
+            nums[lastRootIndex] = temp;
+            heapify(nums,max,end);
+        &#125;
+
+    &#125;
+</code></pre>
 <h3 id="排序算法比较"><a class="markdownIt-Anchor" href="#排序算法比较"></a> 排序算法比较</h3>
 <p><img src="https://www.runoob.com/wp-content/uploads/2019/03/sort.png" alt="avatar"></p>
 <ul>
