@@ -1,0 +1,18 @@
+/* build time:Wed Sep 15 2021 23:27:27 GMT+0800 (China Standard Time)*/
+
+pre,
+.highlight {
+    overflow-y: hidden;
+    background-color: #272822;
+    line-height: 30px
+}
+
+.highlight:before {
+    background-color: #272822
+}
+
+.highlight table>tbody>tr:nth-of-type(odd) {
+    background-color: #272822
+}
+
+/* rebuild by neat */
