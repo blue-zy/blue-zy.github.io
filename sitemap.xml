@@ -186,6 +186,41 @@
   </url>
   
   <url>
+    <loc>https://zhouyi.me/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/tags/%E6%8E%92%E5%BA%8F/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/tags/%E7%BC%96%E7%A8%8B/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://zhouyi.me/tags/%E5%8D%9A%E5%AE%A2/</loc>
     <lastmod>2022-08-17</lastmod>
     <changefreq>daily</changefreq>
@@ -206,52 +241,10 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://zhouyi.me/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/tags/%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/tags/%E6%8E%92%E5%BA%8F/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/tags/%E7%BC%96%E7%A8%8B/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://zhouyi.me/categories/Java/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/categories/tools/</loc>
     <lastmod>2022-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -265,14 +258,7 @@
   </url>
   
   <url>
-    <loc>https://zhouyi.me/categories/%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2022-08-17</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://zhouyi.me/categories/%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://zhouyi.me/categories/tools/</loc>
     <lastmod>2022-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -287,6 +273,20 @@
   
   <url>
     <loc>https://zhouyi.me/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/categories/%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2022-08-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://zhouyi.me/categories/%E6%97%A5%E8%AE%B0/</loc>
     <lastmod>2022-08-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
